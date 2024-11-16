@@ -1,9 +1,9 @@
 import {configureStore} from '@reduxjs/toolkit';
-// import daysReducer from './daysSlice/slice';
+import companyDataReducer from './companyDataSlice/slice';
 
 const store = configureStore({
   reducer: {
-    // days: daysReducer,
+    companyData: companyDataReducer,
   },
 });
 

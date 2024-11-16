@@ -1,6 +1,12 @@
 import {View, Text, Button, StyleSheet} from 'react-native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {OnboardingStackParamList} from '../types/navigation';
 
-function WelcomeScreen({navigation}) {
+type WelcomeScreenProps = {
+  navigation: StackNavigationProp<OnboardingStackParamList, 'Welcome'>;
+};
+
+const WelcomeScreen = ({navigation}: WelcomeScreenProps) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome</Text>
@@ -10,7 +16,7 @@ function WelcomeScreen({navigation}) {
       />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
