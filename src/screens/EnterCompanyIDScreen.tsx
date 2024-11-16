@@ -1,15 +1,13 @@
-import React, {useState} from 'react';
-import {View, Text, TextInput, Button, StyleSheet} from 'react-native';
-import {StackNavigationProp} from '@react-navigation/stack';
-import {OnboardingStackParamList} from '../types/navigation';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { useState } from 'react';
+import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { OnboardingStackParamList } from '../types/navigation';
 
 type EnterCompanyIDScreenProps = {
   navigation: StackNavigationProp<OnboardingStackParamList, 'EnterCompanyID'>;
 };
 
-const EnterCompanyIDScreen: React.FC<EnterCompanyIDScreenProps> = ({
-  navigation,
-}) => {
+const EnterCompanyIDScreen = ({navigation}: EnterCompanyIDScreenProps) => {
   const [companyID, setCompanyID] = useState('');
 
   const handleContinue = () => {
