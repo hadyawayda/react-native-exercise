@@ -1,5 +1,4 @@
-// create company ID slice
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 type CompanyDataState = {
   companyID: string;
@@ -19,5 +18,5 @@ const companyDataSlice = createSlice({
   },
 });
 
-export const {setCompanyID} = companyDataSlice.actions;
+export const { setCompanyID } = companyDataSlice.actions;
 export default companyDataSlice.reducer;

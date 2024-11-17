@@ -1,9 +1,13 @@
-import { useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../store/store';
 import { EnterCompanyIDScreenProps } from '../types/screens';
 
-const EnterCompanyIDScreen = ({navigation}: EnterCompanyIDScreenProps) => {
-  const [companyID, setCompanyID] = useState('');
+const EnterCompanyIDScreen = ({ navigation }: EnterCompanyIDScreenProps) => {
+  const dispatch = useDispatch();
+  const companyID = useSelector(
+    (state: RootState) => state.companyData.companyID,
+  );
 
   const handleContinue = () => {
     if (companyID.trim() !== '') {
@@ -11,6 +15,10 @@ const EnterCompanyIDScreen = ({navigation}: EnterCompanyIDScreenProps) => {
     } else {
       alert('Please enter a valid Company ID.');
     }
+  };
+
+  const setCompanyID = (text: string) => {
+    dispatch({ type: 'setCompanyID', payload: text });
   };
 
   return (
