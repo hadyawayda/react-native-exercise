@@ -1,7 +1,9 @@
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { WelcomeScreenProps } from '../types/screens';
 
-const WelcomeScreen = ({navigation}: WelcomeScreenProps) => {
+const WelcomeScreen = ({ navigation }: WelcomeScreenProps) => {
+  // navigation.reset({ index: 0, routes: [{ name: 'Main' }] });
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome</Text>

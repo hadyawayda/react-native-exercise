@@ -7,9 +7,8 @@ import { RootState } from '../store/store';
 import MainStack from './MainStack';
 import OnboardingStack from './OnboardingStack';
 
-const Stack = createStackNavigator();
-
 function MainNavigator() {
+  const Stack = createStackNavigator();
   const isOnboarded = useSelector(
     (state: RootState) => state.companyData.companyID,
   );
