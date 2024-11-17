@@ -1,13 +1,7 @@
-import React from 'react';
-import {View, Text, Button, StyleSheet} from 'react-native';
-import {StackNavigationProp} from '@react-navigation/stack';
-import {MainStackParamList} from '../types/navigation';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import { MainScreenProps } from '../types/screens';
 
-type MainScreenProps = {
-  navigation: StackNavigationProp<MainStackParamList, 'Main'>;
-};
-
-const MainScreen: React.FC<MainScreenProps> = ({navigation}) => {
+const MainScreen = ({navigation}: MainScreenProps) => {
   return (
     <View style={styles.container}>
       <Button

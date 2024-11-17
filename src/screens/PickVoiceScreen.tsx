@@ -1,10 +1,5 @@
-import { StackNavigationProp } from '@react-navigation/stack';
 import { Button, StyleSheet, Text, View } from 'react-native';
-import { OnboardingStackParamList } from '../types/navigation';
-
-type PickVoiceScreenProps = {
-  navigation: StackNavigationProp<OnboardingStackParamList, 'PickVoice'>;
-};
+import { PickVoiceScreenProps } from '../types/screens';
 
 const PickVoiceScreen = ({navigation}: PickVoiceScreenProps) => {
   return (

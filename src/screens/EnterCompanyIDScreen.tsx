@@ -1,11 +1,6 @@
-import { StackNavigationProp } from '@react-navigation/stack';
 import { useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
-import { OnboardingStackParamList } from '../types/navigation';
-
-type EnterCompanyIDScreenProps = {
-  navigation: StackNavigationProp<OnboardingStackParamList, 'EnterCompanyID'>;
-};
+import { EnterCompanyIDScreenProps } from '../types/screens';
 
 const EnterCompanyIDScreen = ({navigation}: EnterCompanyIDScreenProps) => {
   const [companyID, setCompanyID] = useState('');

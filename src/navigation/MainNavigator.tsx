@@ -11,7 +11,10 @@ function MainNavigator() {
   const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setShowSplash(false), 3000);
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 3000);
+    return () => clearTimeout(timer);
   }, []);
 
   return (

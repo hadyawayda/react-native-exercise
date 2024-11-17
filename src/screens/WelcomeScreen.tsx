@@ -1,10 +1,5 @@
-import {View, Text, Button, StyleSheet} from 'react-native';
-import {StackNavigationProp} from '@react-navigation/stack';
-import {OnboardingStackParamList} from '../types/navigation';
-
-type WelcomeScreenProps = {
-  navigation: StackNavigationProp<OnboardingStackParamList, 'Welcome'>;
-};
+import { Button, StyleSheet, Text, View } from 'react-native';
+import { WelcomeScreenProps } from '../types/screens';
 
 const WelcomeScreen = ({navigation}: WelcomeScreenProps) => {
   return (
