@@ -1,13 +1,7 @@
-import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { SettingsStackParamList } from '../types/navigation';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import { SettingsScreenProps } from '../types/screens';
 
-type SettingsScreenProps = {
-  navigation: StackNavigationProp<SettingsStackParamList, 'Settings'>;
-};
-
-const SettingsScreen: React.FC<SettingsScreenProps> = ({ navigation }) => {
+const SettingsScreen = ({ navigation }: SettingsScreenProps) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Settings</Text>

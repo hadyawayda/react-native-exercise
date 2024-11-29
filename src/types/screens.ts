@@ -1,5 +1,9 @@
-import {StackNavigationProp} from '@react-navigation/stack';
-import {MainStackParamList, OnboardingStackParamList} from './navigation';
+import { StackNavigationProp } from '@react-navigation/stack';
+import {
+  MainStackParamList,
+  OnboardingStackParamList,
+  SettingsStackParamList,
+} from './navigation';
 
 export type WelcomeScreenProps = {
   navigation: StackNavigationProp<OnboardingStackParamList, 'Welcome'>;
@@ -15,4 +19,10 @@ export type VoicebotScreenProps = {
 };
 export type MainScreenProps = {
   navigation: StackNavigationProp<MainStackParamList, 'Main'>;
+};
+export type SettingsScreenProps = {
+  navigation: StackNavigationProp<SettingsStackParamList, 'Settings'>;
+};
+export type SetCompanyIDScreenProps = {
+  navigation: StackNavigationProp<SettingsStackParamList, 'SetCompanyID'>;
 };
