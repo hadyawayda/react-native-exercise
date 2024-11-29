@@ -1,5 +1,5 @@
 import { createStackNavigator } from '@react-navigation/stack';
-import EnterCompanyIDScreen from '../screens/EnterCompanyIDScreen';
+import EnterCompanyIDScreen from '../screens/EnterIDScreen';
 import PickVoiceScreen from '../screens/PickVoiceScreen';
 import WelcomeScreen from '../screens/WelcomeScreen';
 import MainStack from './MainStack';

@@ -1,7 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import SettingsScreen from '../screens/SettingsScreen';
-import SetCompanyIDScreen from '../screens/SetCompanyIDScreen';
-import EnterCompanyIDScreen from '../screens/EnterCompanyIDScreen';
+import SetCompanyIDScreen from '../screens/SetIDScreen';
+import EnterCompanyIDScreen from '../screens/EnterIDScreen';
 import PickVoiceScreen from '../screens/PickVoiceScreen';
 
 function SettingsStack() {

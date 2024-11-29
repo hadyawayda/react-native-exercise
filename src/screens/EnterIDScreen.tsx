@@ -1,4 +1,4 @@
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store/store';
 import { EnterCompanyIDScreenProps } from '../types/screens';
@@ -13,7 +13,7 @@ const EnterCompanyIDScreen = ({ navigation }: EnterCompanyIDScreenProps) => {
     if (companyID.trim() !== '') {
       navigation.navigate('PickVoice');
     } else {
-      alert('Please enter a valid Company ID.');
+      Alert.alert('Please enter a valid Company ID.');
     }
   };
 
