@@ -1,17 +1,20 @@
-import { NavigationContainer } from '@react-navigation/native';
+import { LinkingOptions, NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import SplashScreen from '../screens/SplashScreen';
 import { RootState } from '../store/store';
+import { MainStackParamList } from '../types/navigation';
 import MainStack from './MainStack';
 import OnboardingStack from './OnboardingStack';
 
-function MainNavigator() {
-  const Stack = createStackNavigator();
+const Stack = createStackNavigator();
+
+const MainNavigator = () => {
   const isOnboarded = useSelector(
     (state: RootState) => state.companyData.companyID,
   );
+
   const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
@@ -22,8 +25,25 @@ function MainNavigator() {
     return () => clearTimeout(timer);
   }, []);
 
+  const linking: LinkingOptions<MainStackParamList> = {
+    prefixes: ['itxiapp://'],
+    config: {
+      screens: {
+        Main: {
+          screens: {
+            SettingsStack: {
+              screens: {
+                SetCompanyID: 'set-company-id',
+              },
+            },
+          },
+        },
+      },
+    },
+  };
+
   return (
-    <NavigationContainer>
+    <NavigationContainer linking={linking}>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         {showSplash ? (
           <Stack.Screen name="Splash" component={SplashScreen} />
@@ -35,6 +55,6 @@ function MainNavigator() {
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+};
 
 export default MainNavigator;

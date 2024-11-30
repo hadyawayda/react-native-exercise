@@ -4,7 +4,7 @@ import PickVoiceScreen from '../screens/PickVoiceScreen';
 import WelcomeScreen from '../screens/WelcomeScreen';
 import MainStack from './MainStack';
 
-function OnboardingStack() {
+const OnboardingStack = () => {
   const Stack = createStackNavigator();
 
   return (
@@ -19,6 +19,6 @@ function OnboardingStack() {
       />
     </Stack.Navigator>
   );
-}
+};
 
 export default OnboardingStack;

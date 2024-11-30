@@ -2,12 +2,13 @@ import { Alert, Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store/store';
 import { EnterCompanyIDScreenProps } from '../types/screens';
+import { setCompanyID } from '../store/companyDataSlice/slice';
 
 const EnterCompanyIDScreen = ({ navigation }: EnterCompanyIDScreenProps) => {
-  const dispatch = useDispatch();
   const companyID = useSelector(
     (state: RootState) => state.companyData.companyID,
   );
+  const dispatch = useDispatch();
 
   const handleContinue = () => {
     if (companyID.trim() !== '') {
@@ -17,8 +18,9 @@ const EnterCompanyIDScreen = ({ navigation }: EnterCompanyIDScreenProps) => {
     }
   };
 
-  const setCompanyID = (text: string) => {
-    dispatch({ type: 'setCompanyID', payload: text });
+  const handleCompanyIDChange = (text: string) => {
+    dispatch(setCompanyID(text));
+    // dispatch({ type: 'setCompanyID', payload: text });
   };
 
   return (
@@ -28,7 +30,7 @@ const EnterCompanyIDScreen = ({ navigation }: EnterCompanyIDScreenProps) => {
         style={styles.input}
         placeholder="Company ID"
         value={companyID}
-        onChangeText={setCompanyID}
+        onChangeText={handleCompanyIDChange}
       />
       <Button title="Continue" onPress={handleContinue} />
     </View>

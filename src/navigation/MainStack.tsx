@@ -3,7 +3,7 @@ import MainScreen from '../screens/MainScreen';
 import VoicebotScreen from '../screens/VoicebotScreen';
 import SettingsStack from './SettingsStack';
 
-function MainStack() {
+const MainStack = () => {
   const Stack = createStackNavigator();
 
   return (
@@ -21,6 +21,6 @@ function MainStack() {
       />
     </Stack.Navigator>
   );
-}
+};
 
 export default MainStack;

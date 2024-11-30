@@ -1,4 +1,4 @@
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, Image, StyleSheet, Text, View } from 'react-native';
 import { WelcomeScreenProps } from '../types/screens';
 
 const WelcomeScreen = ({ navigation }: WelcomeScreenProps) => {
@@ -6,7 +6,8 @@ const WelcomeScreen = ({ navigation }: WelcomeScreenProps) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome</Text>
+      <Image source={require('../assets/logo.png')} style={styles.image} />
+      <Text style={styles.title}>Welcome to ITXI Project</Text>
       <Button
         title="Get Started"
         onPress={() => navigation.navigate('EnterCompanyID')}
@@ -24,6 +25,11 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: 'bold',
+  },
+  image: {
+    width: 200,
+    height: 200,
+    marginBottom: 20,
   },
 });
 

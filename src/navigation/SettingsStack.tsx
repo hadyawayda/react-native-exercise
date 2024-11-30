@@ -4,7 +4,7 @@ import SetCompanyIDScreen from '../screens/SetIDScreen';
 import EnterCompanyIDScreen from '../screens/EnterIDScreen';
 import PickVoiceScreen from '../screens/PickVoiceScreen';
 
-function SettingsStack() {
+const SettingsStack = () => {
   const Stack = createStackNavigator();
 
   return (
@@ -15,6 +15,6 @@ function SettingsStack() {
       <Stack.Screen name="PickVoice" component={PickVoiceScreen} />
     </Stack.Navigator>
   );
-}
+};
 
 export default SettingsStack;
