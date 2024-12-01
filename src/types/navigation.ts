@@ -2,7 +2,6 @@ export type OnboardingStackParamList = {
   Welcome: undefined;
   EnterCompanyID: undefined;
   PickVoice: undefined;
-  MainStack: undefined;
 };
 
 export type MainStackParamList = {

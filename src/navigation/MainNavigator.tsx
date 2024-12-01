@@ -1,26 +1,23 @@
 import { LinkingOptions, NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
 import SplashScreen from '../screens/SplashScreen';
-import { RootState } from '../store/store';
 import { MainStackParamList } from '../types/navigation';
-import MainStack from './MainStack';
 import OnboardingStack from './OnboardingStack';
 
 const Stack = createStackNavigator();
 
 const MainNavigator = () => {
-  const isOnboarded = useSelector(
-    (state: RootState) => state.companyData.companyID,
-  );
+  // const isOnboarded = useSelector(
+  //   (state: RootState) => state.companyData.companyID,
+  // );
 
   const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowSplash(false);
-    }, 3000);
+    }, 200);
 
     return () => clearTimeout(timer);
   }, []);
@@ -45,13 +42,16 @@ const MainNavigator = () => {
   return (
     <NavigationContainer linking={linking}>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {showSplash ? (
-          <Stack.Screen name="Splash" component={SplashScreen} />
-        ) : isOnboarded === '' ? (
-          <Stack.Screen name="Onboarding" component={OnboardingStack} />
-        ) : (
-          <Stack.Screen name="Main" component={MainStack} />
-        )}
+        {
+          showSplash ? (
+            <Stack.Screen name="Splash" component={SplashScreen} />
+          ) : (
+            // isOnboarded === '' ? (
+            <Stack.Screen name="Onboarding" component={OnboardingStack} />
+          )
+          // ) : (
+          // <Stack.Screen name="Main" component={MainStack} />
+        }
       </Stack.Navigator>
     </NavigationContainer>
   );

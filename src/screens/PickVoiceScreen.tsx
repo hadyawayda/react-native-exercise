@@ -11,7 +11,7 @@ const PickVoiceScreen = ({ navigation }: PickVoiceScreenProps) => {
 
   const handleDismiss = () => {
     dispatch(setVoicePreference(voice));
-    navigation.navigate('MainStack');
+    navigation.navigate('MainScreen');
   };
 
   return (

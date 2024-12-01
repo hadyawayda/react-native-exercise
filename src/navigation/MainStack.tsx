@@ -3,17 +3,19 @@ import MainScreen from '../screens/MainScreen';
 import VoicebotScreen from '../screens/VoicebotScreen';
 import SettingsStack from './SettingsStack';
 
-const MainStack = () => {
-  const Stack = createStackNavigator();
+const Stack = createStackNavigator();
 
+const MainStack = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: true }}>
-      <Stack.Screen name="Main" component={MainScreen} />
+      <Stack.Screen name="MainScreen" component={MainScreen} />
       <Stack.Screen
         name="Voicebot"
         component={VoicebotScreen}
         options={{ presentation: 'modal', headerShown: false }}
       />
+
+      {/* Move Settings Stack out of the Main Stack*/}
       <Stack.Screen
         name="SettingsStack"
         component={SettingsStack}
