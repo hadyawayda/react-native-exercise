@@ -1,15 +1,14 @@
 import { Picker } from '@react-native-picker/picker';
-import { useState } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
-import { useDispatch } from 'react-redux';
-import { setVoicePreference } from '../store/usePreferences/slice';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../store/store';
+import { setVoicePreference } from '../store/userPreferences/slice';
 import { PickVoiceScreenProps } from '../types/screens';
-// import { CommonActions } from '@react-navigation/native';
 
-// remove useState as it is no longer needed
 const PickVoiceScreen = ({ navigation }: PickVoiceScreenProps) => {
-  const [voice, setVoice] = useState('Default');
   const dispatch = useDispatch();
+
+  const voice = useSelector((state: RootState) => state.voicePreference.voice);
 
   const handleDismiss = () => {
     dispatch(setVoicePreference(voice));
@@ -21,7 +20,7 @@ const PickVoiceScreen = ({ navigation }: PickVoiceScreenProps) => {
       <Text style={styles.title}>Pick a Voice</Text>
       <Picker
         selectedValue={voice}
-        onValueChange={itemValue => setVoice(itemValue)}
+        onValueChange={itemValue => dispatch(setVoicePreference(itemValue))}
         style={styles.picker}>
         <Picker.Item label="Default" value="Default" />
         <Picker.Item label="Male Voice" value="Male" />

@@ -1,9 +1,11 @@
-import {configureStore} from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import companyDataReducer from './companyDataSlice/slice';
+import voicePreferenceReducer from './userPreferences/slice';
 
 const store = configureStore({
   reducer: {
     companyData: companyDataReducer,
+    voicePreference: voicePreferenceReducer,
   },
 });
 
