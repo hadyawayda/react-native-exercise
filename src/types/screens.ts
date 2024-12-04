@@ -18,7 +18,7 @@ export type VoicebotScreenProps = {
   navigation: StackNavigationProp<MainStackParamList, 'Voicebot'>;
 };
 export type MainScreenProps = {
-  navigation: StackNavigationProp<MainStackParamList, 'Main'>;
+  navigation: StackNavigationProp<MainStackParamList, 'MainScreen'>;
 };
 export type SettingsScreenProps = {
   navigation: StackNavigationProp<SettingsStackParamList, 'Settings'>;

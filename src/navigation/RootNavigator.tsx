@@ -3,21 +3,18 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { useEffect, useState } from 'react';
 import SplashScreen from '../screens/SplashScreen';
 import { MainStackParamList } from '../types/navigation';
-import OnboardingStack from './OnboardingStack';
+import MainStack from '../stacks/MainStack';
+import OnboardingStack from '../stacks/OnboardingStack';
 
-const Stack = createStackNavigator();
+const RootStack = createStackNavigator();
 
-const MainNavigator = () => {
-  // const isOnboarded = useSelector(
-  //   (state: RootState) => state.companyData.companyID,
-  // );
-
+const RootNavigator = () => {
   const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowSplash(false);
-    }, 200);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -26,7 +23,7 @@ const MainNavigator = () => {
     prefixes: ['itxiapp://'],
     config: {
       screens: {
-        Main: {
+        MainScreen: {
           screens: {
             SettingsStack: {
               screens: {
@@ -41,20 +38,21 @@ const MainNavigator = () => {
 
   return (
     <NavigationContainer linking={linking}>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {
-          showSplash ? (
-            <Stack.Screen name="Splash" component={SplashScreen} />
-          ) : (
-            // isOnboarded === '' ? (
-            <Stack.Screen name="Onboarding" component={OnboardingStack} />
-          )
-          // ) : (
-          // <Stack.Screen name="Main" component={MainStack} />
-        }
-      </Stack.Navigator>
+      <RootStack.Navigator screenOptions={{ headerShown: false }}>
+        {showSplash ? (
+          <RootStack.Screen name="Splash" component={SplashScreen} />
+        ) : (
+          <>
+            <RootStack.Screen
+              name="OnboardingStack"
+              component={OnboardingStack}
+            />
+            <RootStack.Screen name="MainStack" component={MainStack} />
+          </>
+        )}
+      </RootStack.Navigator>
     </NavigationContainer>
   );
 };
 
-export default MainNavigator;
+export default RootNavigator;

@@ -1,34 +1,27 @@
-import { useEffect, useState } from 'react';
 import { Alert, Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCompanyID } from '../store/companyDataSlice/slice';
-import { EnterCompanyIDScreenProps } from '../types/screens';
 import { RootState } from '../store/store';
+import { EnterCompanyIDScreenProps } from '../types/screens';
 
 const EnterCompanyIDScreen = ({ navigation }: EnterCompanyIDScreenProps) => {
   const dispatch = useDispatch();
-  const [localCompanyID, setLocalCompanyID] = useState('');
 
   const storedCompanyID = useSelector(
     (state: RootState) => state.companyData.companyID,
   );
 
-  useEffect(() => {
-    setLocalCompanyID(storedCompanyID || '');
-  }, [storedCompanyID]);
-
   const handleInputChange = (text: string) => {
-    setLocalCompanyID(text);
     dispatch(setCompanyID(text));
   };
 
   const handleContinue = () => {
-    if (localCompanyID.trim() !== '') {
+    if (storedCompanyID.trim() !== '') {
+      navigation.navigate('PickVoice');
     } else {
       Alert.alert('Please enter a valid Company ID.');
       return;
     }
-    navigation.navigate('PickVoice');
   };
 
   return (
@@ -37,13 +30,14 @@ const EnterCompanyIDScreen = ({ navigation }: EnterCompanyIDScreenProps) => {
       <TextInput
         style={styles.input}
         placeholder="Company ID"
-        value={localCompanyID}
+        value={storedCompanyID}
         onChangeText={handleInputChange}
+        keyboardType="numeric"
       />
       <Button
         title="Continue"
         onPress={handleContinue}
-        disabled={localCompanyID.trim() === ''}
+        disabled={storedCompanyID.trim() === ''}
       />
     </View>
   );
