@@ -6,23 +6,23 @@ import {
 } from './navigation';
 
 export type WelcomeScreenProps = {
-  navigation: StackNavigationProp<OnboardingStackParamList, 'Welcome'>;
+  navigation: StackNavigationProp<OnboardingStackParamList, 'WelcomeScreen'>;
 };
 export type PickVoiceScreenProps = {
-  navigation: StackNavigationProp<OnboardingStackParamList, 'PickVoice'>;
+  navigation: StackNavigationProp<OnboardingStackParamList, 'PickVoiceScreen'>;
 };
 export type EnterCompanyIDScreenProps = {
-  navigation: StackNavigationProp<OnboardingStackParamList, 'EnterCompanyID'>;
+  navigation: StackNavigationProp<OnboardingStackParamList, 'EnterIDScreen'>;
 };
 export type VoicebotScreenProps = {
-  navigation: StackNavigationProp<MainStackParamList, 'Voicebot'>;
+  navigation: StackNavigationProp<MainStackParamList, 'VoicebotScreen'>;
 };
 export type MainScreenProps = {
   navigation: StackNavigationProp<MainStackParamList, 'MainScreen'>;
 };
 export type SettingsScreenProps = {
-  navigation: StackNavigationProp<SettingsStackParamList, 'Settings'>;
+  navigation: StackNavigationProp<SettingsStackParamList, 'SettingsScreen'>;
 };
 export type SetCompanyIDScreenProps = {
-  navigation: StackNavigationProp<SettingsStackParamList, 'SetCompanyID'>;
+  navigation: StackNavigationProp<SettingsStackParamList, 'SetIDScreen'>;
 };

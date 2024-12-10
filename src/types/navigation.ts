@@ -1,25 +1,19 @@
 export type OnboardingStackParamList = {
-  Welcome: undefined;
-  EnterID: undefined;
-  PickVoice: undefined;
+  WelcomeScreen: undefined;
+  EnterIDScreen: undefined;
+  PickVoiceScreen: undefined;
   MainScreen: undefined;
 };
 
 export type MainStackParamList = {
   MainScreen: undefined;
-  Voicebot: undefined;
-  SettingsStack: undefined;
+  VoicebotScreen: undefined;
+  SettingsScreen: undefined;
 };
 
 export type SettingsStackParamList = {
-  Settings: undefined;
-  SetCompanyID: undefined;
-  EnterCompanyID: undefined;
-  PickVoice: undefined;
-};
-
-export type NavigationStacks = {
-  OnboardingStack: OnboardingStackParamList;
-  MainStack: MainStackParamList;
-  SettingsStack: SettingsStackParamList;
+  SettingsScreen: undefined;
+  SetIDScreen: undefined;
+  EnterIDScreen: undefined;
+  PickVoiceScreen: undefined;
 };

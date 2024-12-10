@@ -7,11 +7,11 @@ const SettingsScreen = ({ navigation }: SettingsScreenProps) => {
       <Text style={styles.title}>Settings</Text>
       <Button
         title="Set Company ID"
-        onPress={() => navigation.navigate('SetCompanyID')}
+        onPress={() => navigation.navigate('SetIDScreen')}
       />
       <Button
         title="Pick Voice"
-        onPress={() => navigation.navigate('PickVoice')}
+        onPress={() => navigation.navigate('PickVoiceScreen')}
       />
     </View>
   );

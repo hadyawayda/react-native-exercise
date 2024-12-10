@@ -5,6 +5,7 @@ import SplashScreen from '../screens/SplashScreen';
 import { MainStackParamList } from '../types/navigation';
 import MainStack from '../stacks/MainStack';
 import OnboardingStack from '../stacks/OnboardingStack';
+import SettingsStack from '../stacks/SettingsStack';
 
 const RootStack = createStackNavigator();
 
@@ -48,6 +49,7 @@ const RootNavigator = () => {
               component={OnboardingStack}
             />
             <RootStack.Screen name="MainStack" component={MainStack} />
+            <RootStack.Screen name="SettingsStack" component={SettingsStack} />
           </>
         )}
       </RootStack.Navigator>

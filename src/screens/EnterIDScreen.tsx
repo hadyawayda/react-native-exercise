@@ -17,7 +17,7 @@ const EnterCompanyIDScreen = ({ navigation }: EnterCompanyIDScreenProps) => {
 
   const handleContinue = () => {
     if (storedCompanyID.trim() !== '') {
-      navigation.navigate('PickVoice');
+      navigation.navigate('PickVoiceScreen');
     } else {
       Alert.alert('Please enter a valid Company ID.');
       return;

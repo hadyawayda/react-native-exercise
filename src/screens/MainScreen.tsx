@@ -6,12 +6,14 @@ const MainScreen = ({ navigation }: MainScreenProps) => {
     <View style={styles.container}>
       <Button
         title="Settings"
-        onPress={() => navigation.navigate('SettingsStack')}
+        onPress={() =>
+          navigation.navigate('SettingsStack', { screen: 'SettingsScreen' })
+        }
       />
       <Text style={styles.title}>Main Screen</Text>
       <Button
         title="Launch Voicebot"
-        onPress={() => navigation.navigate('Voicebot')}
+        onPress={() => navigation.navigate('VoicebotScreen')}
       />
     </View>
   );

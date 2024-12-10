@@ -1,7 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import SettingsScreen from '../screens/SettingsScreen';
-import SetCompanyIDScreen from '../screens/SetIDScreen';
-import EnterCompanyIDScreen from '../screens/EnterIDScreen';
+import SetIDScreen from '../screens/SetIDScreen';
+import EnterIDScreen from '../screens/EnterIDScreen';
 import PickVoiceScreen from '../screens/PickVoiceScreen';
 
 const SettingsStack = () => {
@@ -9,10 +9,10 @@ const SettingsStack = () => {
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: true }}>
-      <Stack.Screen name="Settings" component={SettingsScreen} />
-      <Stack.Screen name="SetCompanyID" component={SetCompanyIDScreen} />
-      <Stack.Screen name="EnterCompanyID" component={EnterCompanyIDScreen} />
-      <Stack.Screen name="PickVoice" component={PickVoiceScreen} />
+      <Stack.Screen name="SettingsScreen" component={SettingsScreen} />
+      <Stack.Screen name="SetIDScreen" component={SetIDScreen} />
+      <Stack.Screen name="EnterIDScreen" component={EnterIDScreen} />
+      <Stack.Screen name="PickVoiceScreen" component={PickVoiceScreen} />
     </Stack.Navigator>
   );
 };
