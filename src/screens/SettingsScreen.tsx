@@ -11,7 +11,9 @@ const SettingsScreen = ({ navigation }: SettingsScreenProps) => {
       />
       <Button
         title="Pick Voice"
-        onPress={() => navigation.navigate('PickVoiceScreen')}
+        onPress={() =>
+          navigation.navigate('PickVoiceScreen', { isUpdateMode: true })
+        }
       />
     </View>
   );

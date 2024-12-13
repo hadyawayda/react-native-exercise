@@ -3,9 +3,10 @@ import SettingsScreen from '../screens/SettingsScreen';
 import SetIDScreen from '../screens/SetIDScreen';
 import EnterIDScreen from '../screens/EnterIDScreen';
 import PickVoiceScreen from '../screens/PickVoiceScreen';
+import { SettingsStackParamList } from '../types/navigation';
 
 const SettingsStack = () => {
-  const Stack = createStackNavigator();
+  const Stack = createStackNavigator<SettingsStackParamList>();
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: true }}>

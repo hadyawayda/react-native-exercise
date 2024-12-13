@@ -40,6 +40,7 @@ const RootNavigator = () => {
   return (
     <NavigationContainer linking={linking}>
       <RootStack.Navigator screenOptions={{ headerShown: false }}>
+        {/* Move the splash screen from the root navigator to the onboarding stack */}
         {showSplash ? (
           <RootStack.Screen name="Splash" component={SplashScreen} />
         ) : (
@@ -49,7 +50,11 @@ const RootNavigator = () => {
               component={OnboardingStack}
             />
             <RootStack.Screen name="MainStack" component={MainStack} />
-            <RootStack.Screen name="SettingsStack" component={SettingsStack} />
+            <RootStack.Screen
+              name="SettingsStack"
+              component={SettingsStack}
+              options={{ presentation: 'modal', headerShown: false }}
+            />
           </>
         )}
       </RootStack.Navigator>

@@ -1,9 +1,9 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import MainScreen from '../screens/MainScreen';
 import VoicebotScreen from '../screens/VoicebotScreen';
-// import SettingsScreen from '../screens/SettingsScreen';
+import { MainStackParamList } from '../types/navigation';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<MainStackParamList>();
 
 const MainStack = () => {
   return (
@@ -14,12 +14,6 @@ const MainStack = () => {
         component={VoicebotScreen}
         options={{ presentation: 'modal', headerShown: false }}
       />
-      {/* <Stack.Screen
-        name="SettingsScreen"
-        component={SettingsScreen}
-        options={{ presentation: 'modal', headerShown: false }}
-      /> */}
-      {/* <Stack.Screen name="SettingsScreen" component={SettingsScreen} /> */}
     </Stack.Navigator>
   );
 };

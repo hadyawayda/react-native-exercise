@@ -5,14 +5,20 @@ import { RootState } from '../store/store';
 import { setVoicePreference } from '../store/userPreferences/slice';
 import { PickVoiceScreenProps } from '../types/screens';
 
-const PickVoiceScreen = ({ navigation }: PickVoiceScreenProps) => {
+const PickVoiceScreen = ({ route, navigation }: PickVoiceScreenProps) => {
   const dispatch = useDispatch();
 
   const voice = useSelector((state: RootState) => state.voicePreference.voice);
 
+  const isUpdateMode = route.params?.isUpdateMode || false;
+
   const handleDismiss = () => {
     dispatch(setVoicePreference(voice));
-    navigation.navigate('MainScreen');
+    if (isUpdateMode) {
+      navigation.goBack();
+    } else {
+      navigation.navigate('MainStack', { screen: 'MainScreen' });
+    }
   };
 
   return (
@@ -26,7 +32,10 @@ const PickVoiceScreen = ({ navigation }: PickVoiceScreenProps) => {
         <Picker.Item label="Male Voice" value="Male" />
         <Picker.Item label="Female Voice" value="Female" />
       </Picker>
-      <Button title="Dismiss" onPress={handleDismiss} />
+      <Button
+        title={isUpdateMode ? 'Save' : 'Dismiss'}
+        onPress={handleDismiss}
+      />
     </View>
   );
 };

@@ -1,3 +1,4 @@
+import { RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import {
   MainStackParamList,
@@ -10,9 +11,11 @@ export type WelcomeScreenProps = {
 };
 export type PickVoiceScreenProps = {
   navigation: StackNavigationProp<OnboardingStackParamList, 'PickVoiceScreen'>;
+  route: RouteProp<OnboardingStackParamList, 'PickVoiceScreen'>;
 };
 export type EnterCompanyIDScreenProps = {
   navigation: StackNavigationProp<OnboardingStackParamList, 'EnterIDScreen'>;
+  route: RouteProp<OnboardingStackParamList, 'EnterIDScreen'>;
 };
 export type VoicebotScreenProps = {
   navigation: StackNavigationProp<MainStackParamList, 'VoicebotScreen'>;

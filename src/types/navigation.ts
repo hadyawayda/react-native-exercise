@@ -1,8 +1,9 @@
 export type OnboardingStackParamList = {
   WelcomeScreen: undefined;
-  EnterIDScreen: undefined;
-  PickVoiceScreen: undefined;
+  EnterIDScreen: { isUpdateMode: boolean };
+  PickVoiceScreen: { isUpdateMode: boolean };
   MainScreen: undefined;
+  MainStack: undefined;
 };
 
 export type MainStackParamList = {
@@ -14,6 +15,6 @@ export type MainStackParamList = {
 export type SettingsStackParamList = {
   SettingsScreen: undefined;
   SetIDScreen: undefined;
-  EnterIDScreen: undefined;
-  PickVoiceScreen: undefined;
+  EnterIDScreen: { isUpdateMode: boolean };
+  PickVoiceScreen: { isUpdateMode: boolean };
 };

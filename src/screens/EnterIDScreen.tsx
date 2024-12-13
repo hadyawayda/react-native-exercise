@@ -4,12 +4,17 @@ import { setCompanyID } from '../store/companyDataSlice/slice';
 import { RootState } from '../store/store';
 import { EnterCompanyIDScreenProps } from '../types/screens';
 
-const EnterCompanyIDScreen = ({ navigation }: EnterCompanyIDScreenProps) => {
+const EnterCompanyIDScreen = ({
+  route,
+  navigation,
+}: EnterCompanyIDScreenProps) => {
   const dispatch = useDispatch();
 
   const storedCompanyID = useSelector(
     (state: RootState) => state.companyData.companyID,
   );
+
+  const isUpdateMode = route.params?.isUpdateMode || false;
 
   const handleInputChange = (text: string) => {
     dispatch(setCompanyID(text));
@@ -17,7 +22,11 @@ const EnterCompanyIDScreen = ({ navigation }: EnterCompanyIDScreenProps) => {
 
   const handleContinue = () => {
     if (storedCompanyID.trim() !== '') {
-      navigation.navigate('PickVoiceScreen');
+      if (isUpdateMode) {
+        navigation.goBack();
+      } else {
+        navigation.navigate('PickVoiceScreen', { isUpdateMode: false });
+      }
     } else {
       Alert.alert('Please enter a valid Company ID.');
       return;
@@ -35,7 +44,7 @@ const EnterCompanyIDScreen = ({ navigation }: EnterCompanyIDScreenProps) => {
         keyboardType="numeric"
       />
       <Button
-        title="Continue"
+        title={isUpdateMode ? 'Update' : 'Continue'}
         onPress={handleContinue}
         disabled={storedCompanyID.trim() === ''}
       />

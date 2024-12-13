@@ -8,7 +8,9 @@ const WelcomeScreen = ({ navigation }: WelcomeScreenProps) => {
       <Text style={styles.title}>Welcome to ITXI Project</Text>
       <Button
         title="Get Started"
-        onPress={() => navigation.navigate('EnterIDScreen')}
+        onPress={() =>
+          navigation.navigate('EnterIDScreen', { isUpdateMode: false })
+        }
       />
     </View>
   );
