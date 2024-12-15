@@ -2,14 +2,13 @@ export type OnboardingStackParamList = {
   WelcomeScreen: undefined;
   EnterIDScreen: { isUpdateMode: boolean };
   PickVoiceScreen: { isUpdateMode: boolean };
-  MainScreen: undefined;
-  MainStack: undefined;
+  MainStack: { screen: keyof MainStackParamList };
 };
 
 export type MainStackParamList = {
   MainScreen: undefined;
   VoicebotScreen: undefined;
-  SettingsScreen: undefined;
+  SettingsStack: { screen: keyof SettingsStackParamList };
 };
 
 export type SettingsStackParamList = {
@@ -17,4 +16,9 @@ export type SettingsStackParamList = {
   SetIDScreen: undefined;
   EnterIDScreen: { isUpdateMode: boolean };
   PickVoiceScreen: { isUpdateMode: boolean };
+};
+
+export type RootStackParamList = {
+  OnboardingStack: { screen: keyof OnboardingStackParamList };
+  MainStack: { screen: keyof MainStackParamList };
 };

@@ -1,8 +1,8 @@
-import { LinkingOptions, NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useEffect, useState } from 'react';
+import { linking } from '../config/deeplink';
 import SplashScreen from '../screens/SplashScreen';
-import { MainStackParamList } from '../types/navigation';
 import MainStack from '../stacks/MainStack';
 import OnboardingStack from '../stacks/OnboardingStack';
 import SettingsStack from '../stacks/SettingsStack';
@@ -20,25 +20,12 @@ const RootNavigator = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const linking: LinkingOptions<MainStackParamList> = {
-    prefixes: ['itxiapp://'],
-    config: {
-      screens: {
-        MainScreen: {
-          screens: {
-            SettingsStack: {
-              screens: {
-                SetCompanyID: 'set-company-id',
-              },
-            },
-          },
-        },
-      },
-    },
-  };
-
   return (
-    <NavigationContainer linking={linking}>
+    <NavigationContainer
+      linking={linking}
+      onStateChange={state =>
+        console.log('Current state:', JSON.stringify(state))
+      }>
       <RootStack.Navigator screenOptions={{ headerShown: false }}>
         {/* Move the splash screen from the root navigator to the onboarding stack */}
         {showSplash ? (
