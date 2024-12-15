@@ -1,4 +1,5 @@
 export type OnboardingStackParamList = {
+  SplashScreen: undefined;
   WelcomeScreen: undefined;
   EnterIDScreen: { isUpdateMode: boolean };
   PickVoiceScreen: { isUpdateMode: boolean };

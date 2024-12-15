@@ -5,13 +5,6 @@ export const linking: LinkingOptions<RootStackParamList> = {
   prefixes: ['itxiapp://'],
   config: {
     screens: {
-      OnboardingStack: {
-        screens: {
-          WelcomeScreen: '',
-          EnterIDScreen: 'onboarding/enter-id',
-          PickVoiceScreen: 'onboarding/pick-voice',
-        },
-      },
       MainStack: {
         screens: {
           MainScreen: '',
