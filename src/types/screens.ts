@@ -6,6 +6,9 @@ import {
   SettingsStackParamList,
 } from './navigation';
 
+export type SplashScreenProps = {
+  navigation: StackNavigationProp<OnboardingStackParamList, 'SplashScreen'>;
+};
 export type WelcomeScreenProps = {
   navigation: StackNavigationProp<OnboardingStackParamList, 'WelcomeScreen'>;
 };

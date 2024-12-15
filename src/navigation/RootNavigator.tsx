@@ -8,9 +8,7 @@ import SettingsStack from '../stacks/SettingsStack';
 const RootStack = createStackNavigator();
 
 const RootNavigator = () => {
-  const handleDeepLink = () => {
-    
-  };
+  const handleDeepLink = () => {};
 
   return (
     <NavigationContainer linking={linking} onStateChange={handleDeepLink}>
