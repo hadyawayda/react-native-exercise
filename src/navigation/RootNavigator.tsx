@@ -8,12 +8,12 @@ import SettingsStack from '../stacks/SettingsStack';
 const RootStack = createStackNavigator();
 
 const RootNavigator = () => {
+  const handleDeepLink = () => {
+    
+  };
+
   return (
-    <NavigationContainer
-      linking={linking}
-      onStateChange={state =>
-        console.log('Current state:', JSON.stringify(state))
-      }>
+    <NavigationContainer linking={linking} onStateChange={handleDeepLink}>
       <RootStack.Navigator screenOptions={{ headerShown: false }}>
         <RootStack.Screen name="OnboardingStack" component={OnboardingStack} />
         <RootStack.Screen name="MainStack" component={MainStack} />

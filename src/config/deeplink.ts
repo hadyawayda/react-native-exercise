@@ -10,10 +10,7 @@ export const linking: LinkingOptions<RootStackParamList> = {
           MainScreen: '',
           SettingsStack: {
             screens: {
-              SettingsScreen: 'settings',
               SetIDScreen: 'settings/set-company-id',
-              EnterIDScreen: 'settings/enter-id',
-              PickVoiceScreen: 'settings/pick-voice',
             },
           },
         },
@@ -21,3 +18,5 @@ export const linking: LinkingOptions<RootStackParamList> = {
     },
   },
 };
+
+// adb shell am start -W -a android.intent.action.VIEW -d "itxiapp://settings/set-company-id" com.itxiproject

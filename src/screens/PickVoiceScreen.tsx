@@ -17,7 +17,7 @@ const PickVoiceScreen = ({ route, navigation }: PickVoiceScreenProps) => {
     if (isUpdateMode) {
       navigation.goBack();
     } else {
-      navigation.navigate('MainStack', { screen: 'MainScreen' });
+      navigation.reset({ index: 0, routes: [{ name: 'MainStack' }] });
     }
   };
 
