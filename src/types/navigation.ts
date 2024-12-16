@@ -22,4 +22,5 @@ export type SettingsStackParamList = {
 export type RootStackParamList = {
   OnboardingStack: { screen: keyof OnboardingStackParamList };
   MainStack: { screen: keyof MainStackParamList };
+  SettingsStack: { screen: keyof SettingsStackParamList };
 };

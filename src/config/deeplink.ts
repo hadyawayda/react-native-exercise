@@ -7,7 +7,6 @@ export const linking: LinkingOptions<RootStackParamList> = {
     screens: {
       MainStack: {
         screens: {
-          MainScreen: '',
           SettingsStack: {
             screens: {
               SetIDScreen: 'settings/set-company-id',
