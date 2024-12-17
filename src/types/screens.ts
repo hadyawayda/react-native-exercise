@@ -21,7 +21,8 @@ export type EnterCompanyIDScreenProps = {
   route: RouteProp<OnboardingStackParamList, 'EnterIDScreen'>;
 };
 export type VoicebotScreenProps = {
-  navigation: StackNavigationProp<MainStackParamList, 'VoicebotScreen'>;
+  visible: boolean;
+  setVisible: (visible: boolean) => void;
 };
 export type MainScreenProps = {
   navigation: StackNavigationProp<MainStackParamList, 'MainScreen'>;

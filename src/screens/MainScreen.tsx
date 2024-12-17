@@ -1,8 +1,12 @@
+import { useState } from 'react';
 import { Button, StyleSheet, TouchableOpacity, View } from 'react-native';
 import SettingsIcon from '../components/SettingsIcon';
 import { MainScreenProps } from '../types/screens';
+import VoicebotScreen from './VoicebotScreen';
 
 const MainScreen = ({ navigation }: MainScreenProps) => {
+  const [visible, setVisible] = useState(false);
+
   return (
     <View style={styles.container}>
       <TouchableOpacity
@@ -12,10 +16,8 @@ const MainScreen = ({ navigation }: MainScreenProps) => {
         }>
         <SettingsIcon />
       </TouchableOpacity>
-      <Button
-        title="Launch Voicebot"
-        onPress={() => navigation.navigate('VoicebotScreen')}
-      />
+      <Button title="Launch Voicebot" onPress={() => setVisible(true)} />
+      {visible && <VoicebotScreen visible={visible} setVisible={setVisible} />}
     </View>
   );
 };

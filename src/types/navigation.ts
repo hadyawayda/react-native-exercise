@@ -8,7 +8,6 @@ export type OnboardingStackParamList = {
 
 export type MainStackParamList = {
   MainScreen: undefined;
-  VoicebotScreen: undefined;
   SettingsStack: { screen: keyof SettingsStackParamList };
 };
 
