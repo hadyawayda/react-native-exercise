@@ -1,10 +1,9 @@
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, View } from 'react-native';
 import { SettingsScreenProps } from '../types/screens';
 
 const SettingsScreen = ({ navigation }: SettingsScreenProps) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Settings</Text>
       <Button
         title="Set Company ID"
         onPress={() => navigation.navigate('SetIDScreen')}
@@ -24,11 +23,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
+    gap: 30,
   },
 });
 

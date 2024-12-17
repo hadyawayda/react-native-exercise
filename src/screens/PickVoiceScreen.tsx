@@ -1,5 +1,5 @@
 import { Picker } from '@react-native-picker/picker';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store/store';
 import { setVoicePreference } from '../store/userPreferences/slice';
@@ -23,7 +23,6 @@ const PickVoiceScreen = ({ route, navigation }: PickVoiceScreenProps) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Pick a Voice</Text>
       <Picker
         selectedValue={voice}
         onValueChange={itemValue => dispatch(setVoicePreference(itemValue))}
@@ -46,11 +45,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 20,
   },
   picker: {
     height: 50,

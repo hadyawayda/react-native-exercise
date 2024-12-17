@@ -11,7 +11,21 @@ const OnboardingStack = () => {
   return (
     <Stack.Navigator
       initialRouteName="SplashScreen"
-      screenOptions={{ headerShown: true }}>
+      screenOptions={{
+        headerShown: true,
+        headerTransparent: true,
+        headerTitleAlign: 'center',
+        headerTitleStyle: {
+          fontFamily: 'sans-serif-medium',
+          fontSize: 24,
+          fontWeight: 'bold',
+        },
+        headerStyle: {
+          backgroundColor: 'transparent',
+          elevation: 10,
+          shadowOpacity: 10,
+        },
+      }}>
       <Stack.Screen
         name="SplashScreen"
         component={SplashScreen}
@@ -22,7 +36,7 @@ const OnboardingStack = () => {
         component={WelcomeScreen}
         options={{
           headerLeft: () => null,
-          title: 'Welcome',
+          title: '',
         }}
       />
       <Stack.Screen

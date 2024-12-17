@@ -1,4 +1,4 @@
-import { Alert, Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, Button, StyleSheet, TextInput, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCompanyID } from '../store/companyDataSlice/slice';
 import { RootState } from '../store/store';
@@ -35,7 +35,6 @@ const EnterCompanyIDScreen = ({
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Enter Company ID</Text>
       <TextInput
         style={styles.input}
         placeholder="Company ID"

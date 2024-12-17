@@ -9,7 +9,22 @@ const SettingsStack = () => {
   const Stack = createStackNavigator<SettingsStackParamList>();
 
   return (
-    <Stack.Navigator screenOptions={{ headerShown: true }}>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: true,
+        headerTransparent: true,
+        headerTitleAlign: 'center',
+        headerTitleStyle: {
+          fontFamily: 'sans-serif-medium',
+          fontSize: 24,
+          fontWeight: 'bold',
+        },
+        headerStyle: {
+          backgroundColor: 'transparent',
+          elevation: 10,
+          shadowOpacity: 10,
+        },
+      }}>
       <Stack.Screen
         name="SettingsScreen"
         component={SettingsScreen}

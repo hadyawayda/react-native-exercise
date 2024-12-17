@@ -8,7 +8,22 @@ const Stack = createStackNavigator<MainStackParamList>();
 
 const MainStack = () => {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: true }}>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: true,
+        headerTransparent: true,
+        headerTitleAlign: 'center',
+        headerTitleStyle: {
+          fontFamily: 'sans-serif-medium',
+          fontSize: 24,
+          fontWeight: 'bold',
+        },
+        headerStyle: {
+          backgroundColor: 'transparent',
+          elevation: 10,
+          shadowOpacity: 10,
+        },
+      }}>
       <Stack.Screen
         name="MainScreen"
         component={MainScreen}
