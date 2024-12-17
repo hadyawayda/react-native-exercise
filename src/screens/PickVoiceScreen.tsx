@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store/store';
 import { setVoicePreference } from '../store/userPreferences/slice';
 import { PickVoiceScreenProps } from '../types/screens';
-// import { StackActions } from '@react-navigation/native';
 
 const PickVoiceScreen = ({ route, navigation }: PickVoiceScreenProps) => {
   const dispatch = useDispatch();
@@ -19,8 +18,6 @@ const PickVoiceScreen = ({ route, navigation }: PickVoiceScreenProps) => {
       navigation.goBack();
     } else {
       navigation.reset({ index: 0, routes: [{ name: 'MainStack' }] });
-      // What's the difference?
-      // navigation.dispatch(StackActions.replace('MainStack'));
     }
   };
 

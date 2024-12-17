@@ -10,16 +10,37 @@ const Stack = createStackNavigator<OnboardingStackParamList>();
 const OnboardingStack = () => {
   return (
     <Stack.Navigator
-      screenOptions={{ headerShown: true }}
-      initialRouteName="SplashScreen">
+      initialRouteName="SplashScreen"
+      screenOptions={{ headerShown: true }}>
       <Stack.Screen
         name="SplashScreen"
         component={SplashScreen}
         options={{ headerShown: false }}
       />
-      <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
-      <Stack.Screen name="EnterIDScreen" component={EnterIDScreen} />
-      <Stack.Screen name="PickVoiceScreen" component={PickVoiceScreen} />
+      <Stack.Screen
+        name="WelcomeScreen"
+        component={WelcomeScreen}
+        options={{
+          headerLeft: () => null,
+          title: 'Welcome',
+        }}
+      />
+      <Stack.Screen
+        name="EnterIDScreen"
+        component={EnterIDScreen}
+        options={{
+          headerLeft: () => null,
+          title: 'Enter Company ID',
+        }}
+      />
+      <Stack.Screen
+        name="PickVoiceScreen"
+        component={PickVoiceScreen}
+        options={{
+          headerLeft: () => null,
+          title: 'Pick Voice',
+        }}
+      />
     </Stack.Navigator>
   );
 };

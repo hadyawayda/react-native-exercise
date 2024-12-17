@@ -4,13 +4,13 @@ import {
 } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useEffect, useState } from 'react';
-import { linking } from '../config/deeplink';
 import { useInitialDeepLink } from '../hooks/useInitialDeepLink';
 import MainStack from '../stacks/MainStack';
 import OnboardingStack from '../stacks/OnboardingStack';
 import SettingsStack from '../stacks/SettingsStack';
 import { RootStackParamList } from '../types/navigation';
 import { resetNavigationForDeepLink } from '../utils/resetNavigationForDeepLink';
+import { linking } from './linking';
 
 export const navigationRef = createNavigationContainerRef<RootStackParamList>();
 
