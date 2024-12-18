@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   picker: {
-    height: 50,
+    height: 60,
     width: '100%',
     marginBottom: 20,
   },
